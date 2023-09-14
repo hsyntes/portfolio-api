@@ -15,7 +15,7 @@ const errorController = require("./controllers/errorController");
 const app = express();
 
 // * Cors configuration
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["http://localhost:3000", "https://hsyntes.vercel.app"];
 
 app.use(
   cors({
