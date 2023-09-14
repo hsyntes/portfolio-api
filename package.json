@@ -1,0 +1,48 @@
+{
+  "name": "hsyntes-api",
+  "version": "1.0.0",
+  "description": "Huseyin Ates - Full Stack MERN Developer with proficient in using React & Next.js to create interactive user interfaces and skilled in handling server-side development using Node.js, Express.js, WebSocket with MVC architecture, handling database operations including data models and advanced schema design using MongoDB, implementing Amazon Web Services & Cloud Computing.",
+  "main": "server.js",
+  "scripts": {
+    "start": "npx nodemon server.js",
+    "start:prod": "NODE_ENV=production npx nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "next.js",
+    "react",
+    "node.js",
+    "express",
+    "websocket",
+    "jsonwebtoken",
+    "mongodb",
+    "aws",
+    "backend",
+    "portfolio",
+    "hsyntes",
+    "mern",
+    "api",
+    "rest-api",
+    "restfulapi",
+    "frontend",
+    "tailwindcss"
+  ],
+  "author": "hsyntes",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.10.0",
+    "helmet": "^7.0.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.0",
+    "nodemon": "^3.0.1",
+    "validator": "^13.11.0",
+    "xss-clean": "^0.1.4"
+  }
+}
