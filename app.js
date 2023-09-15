@@ -15,7 +15,11 @@ const errorController = require("./controllers/errorController");
 const app = express();
 
 // * Cors configuration
-const allowedOrigins = ["http://localhost:3000", "https://hsyntes.com"];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://www.hsyntes.com",
+  "https://hsyntes.com",
+];
 
 app.use(
   cors({
