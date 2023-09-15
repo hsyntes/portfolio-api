@@ -1,4 +1,5 @@
 const express = require("express");
+
 const {
   signup,
   login,
@@ -12,8 +13,8 @@ router.post("/signup", signup);
 router.post("/login", login);
 
 // * Protect after this
-// router.use(verifyToken);
+router.use(verifyToken);
 
-router.get("/authorization/current-user", verifyToken, getCurrentUser);
+router.get("/authorization/current-user", getCurrentUser);
 
 module.exports = router;
