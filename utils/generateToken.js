@@ -21,6 +21,7 @@ module.exports = (res, status, message, user) => {
 
   res.status(status).json({
     status: "success",
+    token,
     message,
     data: {
       user,
