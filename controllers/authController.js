@@ -84,6 +84,15 @@ exports.verifyToken = async (req, res, next) => {
 
 exports.getCurrentUser = async (req, res, next) => {
   try {
+    if (!req.user)
+      return next(
+        new ErrorProvider(
+          404,
+          "fail",
+          "Authentication failed. Please log in again."
+        )
+      );
+
     res.status(200).json({
       status: "success",
       data: {
