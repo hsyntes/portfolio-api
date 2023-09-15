@@ -7,7 +7,7 @@ exports.getArticles = async (req, res, next) => {
     const articles = await Article.aggregate([
       {
         $sample: {
-          size: 6,
+          size: 3,
         },
       },
       {
