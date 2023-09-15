@@ -11,8 +11,9 @@ const router = express.Router();
 router.post("/signup", signup);
 router.post("/login", login);
 
+// * Protect after this
 router.use(verifyToken);
 
-router.get("/current-user", getCurrentUser);
+router.get("/authorization/current-user", getCurrentUser);
 
 module.exports = router;
