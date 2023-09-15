@@ -58,7 +58,7 @@ exports.verifyToken = async (req, res, next) => {
       req.headers.authorization &&
       req.headers.authorization.startsWith("Bearer")
     )
-      token = req.headers.authorization.split(" ")[1];
+      token = req.headers.authorization.split("Bearer")[1].trim();
     else
       return next(
         new ErrorProvider(401, "fail", "You're not logged in. Please log in.")
