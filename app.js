@@ -1,4 +1,5 @@
 const express = require("express");
+const compression = require("compression");
 const cors = require("cors");
 const expressRateLimit = require("express-rate-limit");
 const expressMongoSanitize = require("express-mongo-sanitize");
@@ -13,6 +14,8 @@ const errorController = require("./controllers/errorController");
 
 // * Express
 const app = express();
+
+app.use(compression());
 
 // * Cors configuration
 const allowedOrigins = [
