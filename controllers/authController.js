@@ -83,11 +83,6 @@ exports.verifyToken = async (req, res, next) => {
 
 exports.getCurrentUser = async (req, res, next) => {
   try {
-    if (!req.user)
-      return next(
-        new ErrorProvider(401, "fail", "You're not logged in. Please log in.")
-      );
-
     res.status(200).json({
       status: "success",
       data: {
