@@ -65,6 +65,7 @@ exports.verifyToken = async (req, res, next) => {
       );
 
     const decoded = jsonwebtoken.verify(token, process.env.JWT_SECRET);
+
     const user = await User.findById(decoded.id).select(
       "+password +active +role"
     );
