@@ -52,20 +52,12 @@ exports.searchDocuments = async (req, res, next) => {
 
     const { q } = req.params;
 
-    // const projects = await Project.find({
-    //   project_name: { $regex: q, $options: "i" },
-    // });
-
     const projects = await Project.find({
       $or: [
         { project_name: { $regex: q, $options: "i" } },
         { project_description: { $regex: q, $options: "i" } },
       ],
     });
-
-    // const articles = await Article.find({
-    //   article_title: { $regex: q, $options: "i" },
-    // });
 
     const articles = await Article.find({
       $or: [
