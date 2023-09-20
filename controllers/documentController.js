@@ -1,5 +1,6 @@
 const Project = require("../models/Project");
 const Article = require("../models/Article");
+const ErrorProvider = require("../classes/ErrorProvider");
 
 exports.getDocuments = async (req, res, next) => {
   try {
@@ -44,6 +45,11 @@ exports.getDocuments = async (req, res, next) => {
 
 exports.searchDocuments = async (req, res, next) => {
   try {
+    if (!req.params.q)
+      return next(
+        new ErrorProvider(403, "fail", "A search query is required.")
+      );
+
     const { q } = req.params;
 
     const projects = await Project.find({
