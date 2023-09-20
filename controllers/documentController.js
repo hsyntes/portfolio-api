@@ -62,6 +62,7 @@ exports.searchDocuments = async (req, res, next) => {
 
     res.status(200).json({
       status: "success",
+      results: projects.length + articles.length,
       data: {
         projects,
         articles,
