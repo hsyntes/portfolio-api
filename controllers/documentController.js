@@ -60,9 +60,11 @@ exports.searchDocuments = async (req, res, next) => {
       article_title: { $regex: q, $options: "i" },
     });
 
+    const results = Number(projects.length) + Number(articles.length);
+
     res.status(200).json({
       status: "success",
-      results: projects.length + articles.length,
+      results,
       data: {
         projects,
         articles,
