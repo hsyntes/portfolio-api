@@ -3,7 +3,7 @@ const Article = require("../models/Article");
 
 exports.getArticles = async (req, res, next) => {
   try {
-    // * Random 6 article
+    // * Random articles
     const articles = await Article.aggregate([
       {
         $sample: {

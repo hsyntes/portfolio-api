@@ -10,6 +10,7 @@ const userRoutes = require("./routes/userRoutes");
 const projectRoutes = require("./routes/projectRoutes");
 const articleRoutes = require("./routes/articleRoutes");
 const iconRoutes = require("./routes/iconsRoutes");
+const documentRoutes = require("./routes/documentRoutes");
 const errorController = require("./controllers/errorController");
 
 // * Express
@@ -60,6 +61,7 @@ app.use("/hsyntes/users", userRoutes);
 app.use("/hsyntes/projects", projectRoutes);
 app.use("/hsyntes/articles", articleRoutes);
 app.use("/hsyntes/icons", iconRoutes);
+app.use("/hsyntes/documents", documentRoutes);
 
 // * Global error handling
 app.use(errorController);
