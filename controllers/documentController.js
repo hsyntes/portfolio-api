@@ -1,7 +1,7 @@
 const Project = require("../models/Project");
 const Article = require("../models/Article");
 
-exports.getSuggestionDocuments = async (req, res, next) => {
+exports.getDocuments = async (req, res, next) => {
   try {
     const projects = await Project.aggregate([
       {
