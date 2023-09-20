@@ -54,7 +54,7 @@ app.use(hpp());
 app.use(xss());
 
 // * Root route
-app.get("/", (req, res) => res.send("Welcome to my backend api!"));
+app.get("/", (req, res) => res.redirect("https://hsyntes.com"));
 
 // * Routes
 app.use("/hsyntes/users", userRoutes);
