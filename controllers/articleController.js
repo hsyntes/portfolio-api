@@ -1,7 +1,23 @@
 const ErrorProvider = require("../classes/ErrorProvider");
 const Article = require("../models/Article");
 
-exports.getArticles = async (req, res, next) => {
+exports.getAllArticles = async (req, res, next) => {
+  try {
+    const articles = await Article.find();
+
+    res.status(200).json({
+      status: "success",
+      results: articles.length,
+      data: {
+        articles,
+      },
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.getSuggestionArticles = async (req, res, next) => {
   try {
     // * Random articles
     const articles = await Article.aggregate([

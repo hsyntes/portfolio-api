@@ -2,6 +2,7 @@ const express = require("express");
 
 const {
   getArticles,
+  getSuggestionArticles,
   getArticle,
   createArticle,
   updateArticle,
@@ -14,7 +15,8 @@ const {
 
 const router = express.Router();
 
-router.get("/", getArticles);
+router.get("/");
+router.get("/suggestions", getSuggestionArticles);
 router.get("/:id", getArticle);
 
 // * Protect after this

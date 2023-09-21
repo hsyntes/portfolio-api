@@ -15,6 +15,14 @@ const iconSchema = new mongoose.Schema(
       unique: true,
       trim: true,
     },
+
+    icon_category: {
+      type: String,
+      enum: {
+        values: ["expertise", "tech"],
+        message: "Invalid icon category.",
+      },
+    },
   },
   { versionKey: false }
 );

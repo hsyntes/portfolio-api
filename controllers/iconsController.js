@@ -62,6 +62,7 @@ exports.createIcon = async (req, res, next) => {
     const icon = await Icon.create({
       icon_name: req.body.name,
       icon_link: req.body.link,
+      icon_category: req.body.category,
     });
 
     res.status(201).json({
