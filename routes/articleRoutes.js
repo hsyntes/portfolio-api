@@ -1,7 +1,7 @@
 const express = require("express");
 
 const {
-  getArticles,
+  getAllArticles,
   getSuggestionArticles,
   getArticle,
   createArticle,
@@ -15,7 +15,7 @@ const {
 
 const router = express.Router();
 
-router.get("/");
+router.get("/", getAllArticles);
 router.get("/suggestions", getSuggestionArticles);
 router.get("/id/:id", getArticle);
 
