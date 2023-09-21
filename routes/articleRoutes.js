@@ -17,7 +17,7 @@ const router = express.Router();
 
 router.get("/");
 router.get("/suggestions", getSuggestionArticles);
-router.get("/:id", getArticle);
+router.get("/id/:id", getArticle);
 
 // * Protect after this
 router.use(verifyToken);
