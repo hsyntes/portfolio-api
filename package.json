@@ -4,8 +4,7 @@
   "description": "Huseyin Ates - Full Stack MERN Developer with proficient in using React & Next.js to create interactive user interfaces and skilled in handling server-side development using Node.js, Express.js, WebSocket with MVC architecture, handling database operations including data models and advanced schema design using MongoDB, implementing Amazon Web Services & Cloud Computing.",
   "main": "server.js",
   "scripts": {
-    "start": "npx nodemon server.js",
-    "start:prod": "NODE_ENV=production npx nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
