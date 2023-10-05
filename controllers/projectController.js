@@ -3,35 +3,43 @@ const Project = require("../models/Project");
 
 // * Get all projects
 exports.getProjects = async (req, res, next) => {
-  const projects = await Project.find();
+  try {
+    const projects = await Project.find();
 
-  res.status(200).json({
-    status: "success",
-    results: projects.length,
-    data: {
-      projects,
-    },
-  });
+    res.status(200).json({
+      status: "success",
+      results: projects.length,
+      data: {
+        projects,
+      },
+    });
+  } catch (e) {
+    next(e);
+  }
 };
 
 // * Get a project
 exports.getProjectById = async (req, res, next) => {
-  if (!req.params.id)
-    return next(new ErrorProvider(403, "fail", "A project id is required."));
+  try {
+    if (!req.params.id)
+      return next(new ErrorProvider(403, "fail", "A project id is required."));
 
-  const { id } = req.params;
+    const { id } = req.params;
 
-  const project = await Project.findById(id);
+    const project = await Project.findById(id);
 
-  if (!project)
-    return next(new ErrorProvider(404, "fail", "Not found project."));
+    if (!project)
+      return next(new ErrorProvider(404, "fail", "Not found project."));
 
-  res.status(200).json({
-    status: "success",
-    data: {
-      project,
-    },
-  });
+    res.status(200).json({
+      status: "success",
+      data: {
+        project,
+      },
+    });
+  } catch (e) {
+    next(e);
+  }
 };
 
 exports.getProjectByName = async (req, res, next) => {
