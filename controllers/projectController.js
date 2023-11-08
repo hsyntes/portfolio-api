@@ -64,28 +64,28 @@ exports.getProjectByName = async (req, res, next) => {
   }
 };
 
-// * Create a project
-exports.createProject = async (req, res, next) => {
-  try {
-    const project = await Project.create({
-      project_name: req.body.name,
-      project_description: req.body.description,
-      project_logo: req.body.logo,
-      project_link: req.body.link,
-      project_repo: req.body.repo,
-      project_documentation: req.body.documentation,
-    });
+// // * Create a project
+// exports.createProject = async (req, res, next) => {
+//   try {
+//     const project = await Project.create({
+//       project_name: req.body.name,
+//       project_description: req.body.description,
+//       project_logo: req.body.logo,
+//       project_link: req.body.link,
+//       project_repo: req.body.repo,
+//       project_documentation: req.body.documentation,
+//     });
 
-    res.status(201).json({
-      status: "success",
-      data: {
-        project,
-      },
-    });
-  } catch (e) {
-    next(e);
-  }
-};
+//     res.status(201).json({
+//       status: "success",
+//       data: {
+//         project,
+//       },
+//     });
+//   } catch (e) {
+//     next(e);
+//   }
+// };
 
 exports.updateProject = async (req, res, next) => {
   try {
