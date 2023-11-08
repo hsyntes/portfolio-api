@@ -37,7 +37,7 @@ app.use(
 
 // * API Limit
 const limit = expressRateLimit({
-  max: 100000000000000,
+  max: 9999999999999999999999999999,
   windowsMs: 60 * 60 * 1000,
   message: "Too many requests.",
   standartHeaders: true,
