@@ -1,7 +1,7 @@
 const express = require("express");
 const compression = require("compression");
 const cors = require("cors");
-const expressRateLimit = require("express-rate-limit");
+// const expressRateLimit = require("express-rate-limit");
 const expressMongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
 const hpp = require("hpp");
