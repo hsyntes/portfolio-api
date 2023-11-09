@@ -1,7 +1,7 @@
 const express = require("express");
 const compression = require("compression");
 const cors = require("cors");
-// const expressRateLimit = require("express-rate-limit");
+const expressRateLimit = require("express-rate-limit");
 const expressMongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
 const hpp = require("hpp");
@@ -36,16 +36,16 @@ app.use(
 );
 
 // * API Limit
-// const limit = expressRateLimit({
-//   max: 100,
-//   windowsMs: 60 * 60 * 1000,
-//   message: "Too many requests.",
-//   standartHeaders: true,
-//   legacyHeaders: false,
-// });
+const limit = expressRateLimit({
+  max: 100,
+  windowsMs: 60 * 60 * 1000,
+  message: "Too many requests.",
+  standartHeaders: true,
+  legacyHeaders: false,
+});
 
-// app.use(express.json({ limit }));
-app.use(express.json());
+app.use(express.json({ limit }));
+// app.use(express.json());
 
 // * Security
 app.use(expressMongoSanitize());
