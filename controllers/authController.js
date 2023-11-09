@@ -105,13 +105,13 @@ exports.getCurrentUser = async (req, res, next) => {
 };
 
 // * Role based access control
-exports.roleBasedAccessControl = (req, res, next) => {
-  try {
-    if (req.user.role !== "admin")
-      return next(new ErrorProvider(403, "fail", "Permission denied!"));
+// exports.roleBasedAccessControl = (req, res, next) => {
+//   try {
+//     if (req.user.role !== "admin")
+//       return next(new ErrorProvider(403, "fail", "Permission denied!"));
 
-    next();
-  } catch (e) {
-    next(e);
-  }
-};
+//     next();
+//   } catch (e) {
+//     next(e);
+//   }
+// };
