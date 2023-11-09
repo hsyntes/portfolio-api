@@ -65,53 +65,53 @@ exports.getProjectByName = async (req, res, next) => {
 };
 
 // * Create a project
-// exports.createProject = async (req, res, next) => {
-//   try {
-//     const project = await Project.create({
-//       project_name: req.body.name,
-//       project_description: req.body.description,
-//       project_logo: req.body.logo,
-//       project_link: req.body.link,
-//       project_repo: req.body.repo,
-//       project_documentation: req.body.documentation,
-//     });
+exports.createProject = async (req, res, next) => {
+  try {
+    const project = await Project.create({
+      project_name: req.body.name,
+      project_description: req.body.description,
+      project_logo: req.body.logo,
+      project_link: req.body.link,
+      project_repo: req.body.repo,
+      project_documentation: req.body.documentation,
+    });
 
-//     res.status(201).json({
-//       status: "success",
-//       data: {
-//         project,
-//       },
-//     });
-//   } catch (e) {
-//     next(e);
-//   }
-// };
+    res.status(201).json({
+      status: "success",
+      data: {
+        project,
+      },
+    });
+  } catch (e) {
+    next(e);
+  }
+};
 
-// exports.updateProject = async (req, res, next) => {
-//   try {
-//     if (!req.params.id)
-//       return next(
-//         new ErrorProvider(403, "fail", "A project id is required to update..")
-//       );
+exports.updateProject = async (req, res, next) => {
+  try {
+    if (!req.params.id)
+      return next(
+        new ErrorProvider(403, "fail", "A project id is required to update..")
+      );
 
-//     const { id } = req.params;
+    const { id } = req.params;
 
-//     const project = await Project.findByIdAndUpdate(
-//       id,
-//       {
-//         project_documentation: req.body.documentation,
-//       },
-//       { new: true, runValidators: true }
-//     );
+    const project = await Project.findByIdAndUpdate(
+      id,
+      {
+        project_documentation: req.body.documentation,
+      },
+      { new: true, runValidators: true }
+    );
 
-//     res.status(200).json({
-//       status: "success",
-//       message: `${project.name} has been updated successfully.`,
-//       data: {
-//         project,
-//       },
-//     });
-//   } catch (e) {
-//     next(e);
-//   }
-// };
+    res.status(200).json({
+      status: "success",
+      message: `${project.name} has been updated successfully.`,
+      data: {
+        project,
+      },
+    });
+  } catch (e) {
+    next(e);
+  }
+};
