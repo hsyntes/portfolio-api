@@ -57,21 +57,21 @@ exports.getIconByName = async (req, res, next) => {
   }
 };
 
-exports.createIcon = async (req, res, next) => {
-  try {
-    const icon = await Icon.create({
-      icon_name: req.body.name,
-      icon_link: req.body.link,
-      icon_category: req.body.category,
-    });
+// exports.createIcon = async (req, res, next) => {
+//   try {
+//     const icon = await Icon.create({
+//       icon_name: req.body.name,
+//       icon_link: req.body.link,
+//       icon_category: req.body.category,
+//     });
 
-    res.status(201).json({
-      status: "success",
-      data: {
-        icon,
-      },
-    });
-  } catch (e) {
-    next(e);
-  }
-};
+//     res.status(201).json({
+//       status: "success",
+//       data: {
+//         icon,
+//       },
+//     });
+//   } catch (e) {
+//     next(e);
+//   }
+// };

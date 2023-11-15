@@ -23,7 +23,7 @@ router.get("/name/:name", getProjectByName);
 router.use(verifyToken);
 
 // * Role-Based Access Control
-router.post("/", roleBasedAccessControl, createProject);
-router.patch("/:id", roleBasedAccessControl, updateProject);
+// router.post("/", roleBasedAccessControl, createProject);
+// router.patch("/:id", roleBasedAccessControl, updateProject);
 
 module.exports = router;

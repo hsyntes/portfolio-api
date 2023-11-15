@@ -21,6 +21,6 @@ router.get("/name/:name", getIconByName);
 router.use(verifyToken);
 
 // * Role-Based Access Control
-router.post("/", roleBasedAccessControl, createIcon);
+// router.post("/", roleBasedAccessControl, createIcon);
 
 module.exports = router;

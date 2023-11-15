@@ -23,7 +23,7 @@ router.get("/id/:id", getArticle);
 router.use(verifyToken);
 
 // * Role-Based Access Control
-router.post("/", roleBasedAccessControl, createArticle);
-router.patch("/:id", roleBasedAccessControl, updateArticle);
+// router.post("/", roleBasedAccessControl, createArticle);
+// router.patch("/:id", roleBasedAccessControl, updateArticle);
 
 module.exports = router;
