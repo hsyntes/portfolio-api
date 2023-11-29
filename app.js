@@ -8,6 +8,7 @@ const hpp = require("hpp");
 const xss = require("xss-clean");
 const userRoutes = require("./routes/userRoutes");
 const projectRoutes = require("./routes/projectRoutes");
+const certificationRoutes = require("./routes/certificationRoutes");
 const articleRoutes = require("./routes/articleRoutes");
 const iconRoutes = require("./routes/iconsRoutes");
 const documentRoutes = require("./routes/documentRoutes");
@@ -60,6 +61,7 @@ app.get("/", (req, res) => res.redirect("https://hsyntes.com"));
 // * Routes
 app.use("/hsyntes/users", userRoutes);
 app.use("/hsyntes/projects", projectRoutes);
+app.use("/hsyntes/certifications", certificationRoutes);
 app.use("/hsyntes/articles", articleRoutes);
 app.use("/hsyntes/icons", iconRoutes);
 app.use("/hsyntes/documents", documentRoutes);
