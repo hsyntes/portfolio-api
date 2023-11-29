@@ -21,7 +21,6 @@ app.use(compression());
 
 // * Cors configuration
 const allowedOrigins = [
-  "http://localhost:3000",
   "https://www.hsyntes.com",
   "https://hsyntes.com",
   "https://hsyntes.vercel.app",
